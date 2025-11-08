@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.code-workspace
+uv.lock
+.idea/
+.vscode/
+# Virtual environments
+.venv
+.env.prod
+
+# Переменные окружения
+.env
+
+# Логи
+*.log
+*.log.*
