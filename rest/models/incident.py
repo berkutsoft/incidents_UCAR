@@ -27,12 +27,12 @@ class Incident(SQLModel, table=True):
     updated_at: datetime = Field(default_factory= lambda: datetime.now(UTC), description="Updated at")
     status: IncidentStatus = Field(
         default=IncidentStatus.NEW,
-        sa_column=Column(postgresql.ENUM(IncidentStatus), server_default=IncidentStatus.NEW.name, nullable=False),
+        sa_column=Column(postgresql.ENUM(IncidentStatus), server_default=IncidentStatus.NEW.name, nullable=False, index=True),
         description="Status",
     )
     source: Source = Field(
         ...,
-        sa_column=Column(postgresql.ENUM(Source), server_default=Source.OPERATOR.name, nullable=False),
+        sa_column=Column(postgresql.ENUM(Source), server_default=Source.OPERATOR.name, nullable=False, index=True),
         description="Source",
     )
 
